@@ -1,0 +1,81 @@
+{
+  "name": "rollup-react-component-demo-2022",
+  "version": "0.1.0",
+  "description": "Rollup 编译的 react 组件工程",
+  "keywords": [],
+  "homepage": "https://github.com/shallinta/rollup-react-component-demo-2022",
+  "bugs": {
+    "url": "https://github.com/shallinta/rollup-react-component-demo-2022/#issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/shallinta/rollup-react-component-demo-2022.git"
+  },
+  "license": "MIT",
+  "author": "John Chan",
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "bin": {},
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "rollup -c",
+    "clean": "rimraf dist",
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src",
+    "prepare": "npm run build",
+    "push": "git push && git push origin --tags",
+    "release": "standard-version && npm publish --access public",
+    "postrelease": "npm run push",
+    "release:alpha": "standard-version --prerelease alpha && npm publish --access public --tag next",
+    "postrelease:alpha": "npm run push",
+    "release:beta": "standard-version --prerelease beta && npm publish --access public --tag next",
+    "postrelease:beta": "npm run push",
+    "release:first": "standard-version --first-release && npm publish --access public",
+    "postrelease:first": "git push -u origin master && git push origin --tags",
+    "release:major": "standard-version --release-as major && npm publish --access public",
+    "postrelease:major": "npm run push",
+    "release:minor": "standard-version --release-as minor && npm publish --access public",
+    "postrelease:minor": "npm run push",
+    "release:pre": "npm run release:alpha",
+    "start": "",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.18.6",
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@babel/preset-react": "^7.18.6",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-eslint": "^8.0.2",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "postcss": "^8.4.14",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.75.7",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "standard-version": "^9.5.0"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.21",
+    "ramda": "^0.28.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "smarty-react-hooks": "^0.2.6"
+  },
+  "engines": {
+    "node": ">=14",
+    "npm": ">=6"
+  }
+}
