@@ -17,16 +17,18 @@ export default [{
   }],
   external: [
     ...Object.keys(pkg.peerDependencies || {}),
+    'date-fns/locale',
+    'lodash-es/debounce',
   ],
   plugins: [
     eslint({
       throwOnError: true,
       throwOnWarning: true,
       include: ['src/**'],
-      exclude: ['node_modules/**', '**/*.css'],
+      exclude: ['node_modules/**', '**/*.css', /* '** /*.less' */],
     }),
     postcss({
-      extensions: ['.css'],
+      extensions: ['.css', /* '.less' */],
       plugins: [],
       modules: true,
       // sourceMap: true,

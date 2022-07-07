@@ -68,11 +68,12 @@
     "standard-version": "^9.5.0"
   },
   "peerDependencies": {
-    "lodash": "^4.17.21",
+    "date-fns": "^2.28.0",
+    "lodash-es": "^4.17.21",
     "ramda": "^0.28.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "smarty-react-hooks": "^0.2.6"
+    "smarty-react-hooks": "^0.2.8"
   },
   "engines": {
     "node": ">=14",
