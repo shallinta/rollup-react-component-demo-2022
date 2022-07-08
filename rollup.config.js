@@ -1,5 +1,6 @@
 import babel from '@rollup/plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonJs from '@rollup/plugin-commonjs';
 import eslint from '@rollup/plugin-eslint';
 import { terser } from 'rollup-plugin-terser';
 import copy from 'rollup-plugin-copy';
@@ -42,6 +43,7 @@ export default [{
       browser: true,
       extensions: ['.js', '.jsx'],
     }),
+    commonJs(),
     terser({
       keep_fnames: true,
     }),
